@@ -76,6 +76,7 @@ class rabbitmq::params {
   $manage_repos                = undef
   $service_ensure              = 'running'
   $service_manage              = true
+  $systemd_manage              = true
   #config
   $cluster_node_type           = 'disc'
   $cluster_nodes               = []
