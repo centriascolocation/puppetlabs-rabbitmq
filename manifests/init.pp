@@ -40,6 +40,7 @@ class rabbitmq(
   $heartbeat                  = $rabbitmq::params::heartbeat,
   $service_ensure             = $rabbitmq::params::service_ensure,
   $service_manage             = $rabbitmq::params::service_manage,
+  $systemd_manage             = $rabbitmq::params::systemd_manage,
   $service_name               = $rabbitmq::params::service_name,
   $ssl                        = $rabbitmq::params::ssl,
   $ssl_only                   = $rabbitmq::params::ssl_only,
@@ -134,6 +135,7 @@ class rabbitmq(
   # Validate service parameters.
   validate_re($service_ensure, '^(running|stopped)$')
   validate_bool($service_manage)
+  validate_bool($systemd_manage)
   validate_string($service_name)
   validate_bool($ssl)
   validate_bool($ssl_only)
